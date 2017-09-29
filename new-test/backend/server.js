@@ -7,7 +7,7 @@ const app = express();
 const port = 4200;
 
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongod://localhost/mernToys', { useMongoClient: True })
+mongoose.connect('mongodb://localhost/mernToys', { useMongoClient: true })
 .then(() => {
     console.log("Mongoose Running");
 })

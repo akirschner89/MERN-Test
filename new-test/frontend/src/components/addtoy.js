@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ToyService from './ToyService';
+import ToyService from './toyservice';
 
 class AddToy extends Component {
     constructor(props){
@@ -30,7 +30,7 @@ handleSubmit(event) {
                     <label htmlFor="">Add Toy:</label>
                     <input type="text" value={this.state.toy} 
                     onChange={this.handleChange}
-                    className="form-control" />
+                    className="form-control" /><br/>
 
                 <input type="submit" value="Submit" className="btn btn-primary"/>
                 </form>

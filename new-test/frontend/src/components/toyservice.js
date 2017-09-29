@@ -5,13 +5,24 @@ class ToyService {
         axios.post('http://localhost:4200/toys/add/post', {
             toy: data
         })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+        .then(res => this.setState({ toyr: res.data}))
+        .catch(err => console.log(err))
     }
+
+    updateData(data, id) {
+        axios.post('http://localhost:4200/toys/update' + id, {
+            toy: data
+        })
+        .then(res => this.setState({ toyr: res.data}))
+        .catch(err => console.log(err))
+    }
+
+    deleteData(id) {
+        axios.get('http://localhost:4200/toys/delete' + id)
+        .then()
+        .catch(err => console.log(err))
+    }
+
 }
 
 export default ToyService;

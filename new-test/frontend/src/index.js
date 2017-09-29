@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import AddToy from './components/addtoy';
+import IndexToy from './components/IndexToy';
+import EditToy from './components/EditToy';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-<Router>
-    <div>
-        <Route exact path ='/'componeont={App} />
-        <Route path='add-toy' component={AddToy} />
-    </div>
-</Router>, document.getElementById('root'));
+    <Router>
+        <div>
+            <Route path='add-toy' component={AddToy} />
+            <Route path='index' component={IndexToy} />
+            <Route exact path='/' componeont={App} />
+            <Route path='edit/:id' component={EditToy} />
+        </div>
+    </Router>, document.getElementById('root'));
 registerServiceWorker();
